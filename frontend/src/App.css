@@ -1,0 +1,108 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.StuForm{
+    width: 80%;
+    background-color: #90EE90;
+    margin: 1% auto;
+    padding: 2%;
+}
+div.head{
+    text-align: left;
+}
+
+.Header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    
+}
+
+div.login{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+div.Header img{
+    border-radius: 50%;
+}
+div.Header h1{
+    text-align: center;
+    /* width: 20%; */
+}
+.logo{
+    height: 10rem;
+    width: 10rem;
+}
+ol.ques{
+    margin: 1% auto;
+    /* padding: 1% auto; */
+    width: 90%;
+    /* text-align: center; */
+}
+ol.ques li{
+    margin: 1%;
+    padding: 1%;
+}
+div.opts{
+    
+    color: black;
+}
+div.opts > *{
+    margin: 0.5%;
+    padding: 0.5%;
+}
+
+.AdminLogin{
+    height: 100%;
+    background-color: lightgreen;
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    padding: 2%;
+    margin: 2%;
+    border-radius: 2%;
+    justify-items: center;
+    align-items: center;
+}
+.DataEntry{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+
+    justify-content: center;
+    align-items: center;
+    background-color: lightgreen;
+    padding: 2%;
+    margin: 2% auto;
+
+}
+
+
+.DataEntry{
+    display: flex;
+    flex-direction: column;
+    padding: 1%;
+
+}
+.Lecturer{
+    background-color: azure;
+    margin: 2%;
+    padding: 1%;
+}
+
+.repeat{
+    background-color: aliceblue;
+    margin: 1%;
+    padding: 1%;
+    border: 2px lightgreen solid;
+}
+textarea{
+    width: 100%;
+}
