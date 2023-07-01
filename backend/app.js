@@ -4,8 +4,8 @@ import mongoose from "mongoose";
 import admin from "./models/admin.js";
 import student from "./models/student.js";
 import stuDetails from "./controllers/rollno.js";
-import resultGenerator from "./controllers/resultGenerator.js";
-import csvWriter from "./controllers/new.js";
+// import resultGenerator from "./controllers/resultGenerator.js";
+import csvWriter from "./controllers/csvWriter.js";
 import itLecturers from "./models/itLecturers.js";
 import aidsLecturers from "./models/aidsLecturers.js";
 import aimlLecturers from "./models/aimlLecturers.js";
@@ -170,10 +170,8 @@ app.get("/result", async (req, res) => {
   // let dept = req.body.dept
   let dept = "it";
   // select[`${dept}Lecturers`].find().then(result=>{
-      console.log('called1');
-  const lecturers = await itLecturers.find();
-  // res.json(result)
-  console.log('called');
-  console.log(await csvWriter(lecturers, dept));
-  res.sendFile(path.resolve(`./results/${dept}Result.csv`));
+  const lecturers = await select[`${dept}Lecturers`].find();
+  // res.json(lecturers);
+  await csvWriter(dept, lecturers);
+  res.sendFile(path.resolve(`./Result.csv`));
 });

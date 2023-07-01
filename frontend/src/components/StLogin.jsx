@@ -7,6 +7,7 @@ function StLogin() {
     <div className='Login'>
       <h1>Student Feedback form</h1>
       <form action="" onSubmit={(e)=>{
+        console.log(email);
         e.preventDefault();
         const emailSend = {
           "email" : email
