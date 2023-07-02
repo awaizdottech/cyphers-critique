@@ -53,7 +53,7 @@ function MegaForm() {
     e.preventDefault();
     console.log(student)
     axios
-      .post("http://localhost:4000/feedback-submit", student)
+      .post("/feedback-submit", student)
       .then((res) => {
         console.log(res);
       })
@@ -62,6 +62,7 @@ function MegaForm() {
       });
     console.log("nhi mlm hora");
   };
+  
 
   useEffect(() => {
     setlast(index === newForm.length - 1);

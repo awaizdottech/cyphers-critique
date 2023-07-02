@@ -19,7 +19,7 @@ function AdminLogin() {
   const PostData = async (e) => {
     try {
       e.preventDefault();let creds = {
-        admin : admin,
+        email : admin,
         password : password
       }
       console.log(creds)
