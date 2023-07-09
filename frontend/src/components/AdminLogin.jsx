@@ -31,9 +31,9 @@ function AdminLogin() {
         body: JSON.stringify(creds),
       });
       const data = await res.json();
-      // console.log(data);
-      if (data) window.alert("connected to backend");
-      window.location.href = "http://localhost:3000/form";
+      console.log(data);
+      // if (data) window.alert("connected to backend");
+      // window.location.href = "http://localhost:3000/form";
     } catch (error) {
       console.log(error);
     }
