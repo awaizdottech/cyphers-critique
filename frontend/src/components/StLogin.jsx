@@ -12,6 +12,7 @@ function StLogin() {
         const emailSend = {
           "email" : email
         }
+        axios.get('/even-sem-subjects',emailSend).then((res)=>console.log(res)).catch(e => console.log(e))
         axios.post('/student-login-submit',emailSend).then((res)=>console.log(res)).catch(e => console.log(e))
       }}>
         <label htmlFor="text">Enter your email ID</label><br />

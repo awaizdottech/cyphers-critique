@@ -63,6 +63,7 @@ app.get("/feedback-form", (req, res) => {
 
 // sending form submits
 app.post("/admin-login-submit", (req, res) => {
+  let found = false;
   admin
     .find()
     .then((result) => {
@@ -70,13 +71,9 @@ app.post("/admin-login-submit", (req, res) => {
         if (
           element.email == req.body.email &&
           element.password == req.body.password
-        ) {
-          console.log(result);
-          res.json(result);
-        } else {
-          res.json("not found");
-        }
+        ) found=true;
       });
+      found?res.json(result):res.json("unsuccessful");
     })
     .catch((err) => {
       res.json(err.message);
@@ -133,10 +130,12 @@ let oddSems = { 1: 1, 2: 3, 3: 5, 4: 7 };
 let evenSems = { 1: 2, 2: 4, 3: 6, 4: 8 };
 
 app.get("/even-sem-subjects", (req, res) => {
-  currentSem = evenSems;
+  currentSem = {...evenSems};
+  res.json('sem configurated')
 });
 app.get("/odd-sem-subjects", (req, res) => {
-  currentSem = oddSems;
+  currentSem = {...oddSems};
+  res.json('sem configurated')
 });
 
 app.post("/student-login-submit", (req, res) => {
