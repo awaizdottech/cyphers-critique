@@ -73,12 +73,23 @@ app.post("/admin-login-submit", (req, res) => {
           element.password == req.body.password
         ) found=true;
       });
-      found?res.json(result):res.json("unsuccessful");
+      found?res.json('sucessful'):res.json("unsuccessful");
     })
     .catch((err) => {
       res.json(err.message);
     });
 });
+
+app.get("/admin-list",(req,res)=>{
+  admin
+    .find()
+    .then((result) => {
+      res.json(result)
+    })
+    .catch((err) => {
+      res.json(err.message);
+    });
+})
 
 app.post("/add-admin", (req, res) => {
   //checking if admin already exists
@@ -138,6 +149,7 @@ app.get("/odd-sem-subjects", (req, res) => {
   res.json('sem configurated')
 });
 
+let lecturerSubjectAarray=[]
 app.post("/student-login-submit", (req, res) => {
   //checking and saving id if student is new
   student
@@ -154,7 +166,6 @@ app.post("/student-login-submit", (req, res) => {
           .save()
           .then((result) => {
             studentDetails = stuDetails(req.body.email.slice(0, 12));
-            let lecturerSubjectAarray = [];
             select[studentDetails.collection]
               .find({ "subjects.yr": studentDetails.yr })
               .then((result) => {
@@ -174,7 +185,7 @@ app.post("/student-login-submit", (req, res) => {
                     }
                   });
                 });
-                res.json(lecturerSubjectAarray);
+                res.json("u r in");
               });
           })
           .catch((err) => console.log(err.message));
@@ -184,6 +195,8 @@ app.post("/student-login-submit", (req, res) => {
       res.json(err.message);
     });
 });
+
+app.get("/lecture-subjects",(req,res)=>res.json(lecturerSubjectAarray))
 
 app.post("/feedback-submit", (req, res) => {
   //[{Subject: "subject", Feedback: []}]

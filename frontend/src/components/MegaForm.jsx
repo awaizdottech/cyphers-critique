@@ -24,28 +24,7 @@ function MegaForm() {
     }
     setIndex((index) => index - 1);
   };
-  const [newForm, setForm] = useState([
-    {
-      Subject: "Java",
-      Lecturer: "Afroze",
-    },
-    {
-      Subject: "CN",
-      Lecturer: "Pasha",
-    },
-    {
-      Subject: "DBS",
-      Lecturer: "Rasheed",
-    },
-    {
-      Subject: "COMP",
-      Lecturer: "Wajid",
-    },
-    {
-      Subject: "AIML",
-      Lecturer: "Rafi U Zaman",
-    },
-  ]);
+  const [newForm, setForm] = useState([]);
 
   const [last, setlast] = useState(index === newForm.length - 1);
 
