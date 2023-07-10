@@ -2,6 +2,7 @@ import './App.css';
 import { Routes, Route, BrowserRouter, Form } from 'react-router-dom';
 import StudentForm from './components/StudentForm';
 import AdminLogin from './components/AdminLogin';
+import AdminPage from './components/AdminPage';
 import DataEntry from './components/DataEntry';
 
 import MegaForm from './components/MegaForm';
@@ -18,6 +19,7 @@ function App() {
           <Routes>
             <Route path="/" element={<StLogin />} />
             <Route path="/admin-login" element={<AdminLogin />} />
+            <Route path="/admin-page" element={<AdminPage />} />
             <Route path="/form" element={<MegaForm />} />
 
             <Route path="/data-entry" element={<DataEntry />} />

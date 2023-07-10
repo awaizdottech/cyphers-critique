@@ -106,3 +106,20 @@ div.opts > *{
 textarea{
     width: 100%;
 }
+
+div.adminPage{
+    background-color: #90EE90;
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    justify-content: center;
+    align-items: center;
+    height: 50vh;
+    margin: 2px auto;
+}
+
+div.adminPage button{
+    width: 20%;
+    margin: 5px;
+    padding: 6px;
+}
