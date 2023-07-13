@@ -24,24 +24,72 @@ function MegaForm() {
     }
     setIndex((index) => index - 1);
   };
-  const [newForm, setForm] = useState([]);
+  const [newForm, setForm] = useState([
+    {
+      Subject: "Java",
+      Lecturer: "Afroze",
+    },
+    {
+      Subject: "CN",
+      Lecturer: "Pasha",
+    },
+    {
+      Subject: "DBS",
+      Lecturer: "Rasheed",
+    },
+    {
+      Subject: "COMP",
+      Lecturer: "Wajid",
+    },
+    {
+      Subject: "AIML",
+      Lecturer: "Rafi U Zaman",
+    },
+  ]);
+
+
 
   const [last, setlast] = useState(index === newForm.length - 1);
 
   const sendform = (e) => {
     e.preventDefault();
     console.log(student)
-    axios
-      .post("/feedback-submit", student)
-      .then((res) => {
-        console.log(res);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-    console.log("nhi mlm hora");
+    window.location.href = "http://localhost:3000/result";
+    localStorage.clear();
+    // axios
+    //   .post("/feedback-submit", student)
+    //   .then((res) => {
+    //     console.log(res);
+    //   })
+    //   .catch((err) => {
+    //     console.log(err);
+    //   });
+    // console.log("nhi mlm hora");
   };
-  
+
+  // const fetchLectureSubjects = async () => {
+  //   try {
+  //     const response = await fetch('/lecture-subjects', {
+  //       method: 'POST',
+  //       headers: {
+  //         'Content-Type': 'application/json',
+  //       },
+  //       // Add any additional request body parameters if required
+  //     });
+
+  //     if (response.ok) {
+  //       const data = await response.json();
+  //       setForm(data);
+  //       console.log(data); // Process the data as needed
+  //     } else {
+  //       console.log('Failed to fetch lecture subjects');
+  //     }
+  //   } catch (error) {
+  //     console.log('Error:', error);
+  //   }
+  // };
+
+
 
   useEffect(() => {
     setlast(index === newForm.length - 1);
@@ -56,17 +104,18 @@ function MegaForm() {
           index={index}
           islast={last}
         />
-
-        {index !== newForm.length - 1 && (
-          <button onClick={(e) => next(e, newForm)}>Next</button>
-        )}
-        <br />
-        {index !== 0 && <button onClick={(e) => back(e)}>Back</button>}
-        {index === newForm.length - 1 && (
-          <button type="submit" onClick={(e) => sendform(e)}>
-            submit form
-          </button>
-        )}
+        <div className="btns">
+          {index !== newForm.length - 1 && (
+            <button onClick={(e) => next(e, newForm)}>Next</button>
+          )}
+          <br />
+          {index !== 0 && <button onClick={(e) => back(e)}>Back</button>}
+          {index === newForm.length - 1 && (
+            <button type="submit" onClick={(e) => sendform(e)}>
+              submit form
+            </button>
+          )}
+        </div>
       </form>
     </div>
   );
