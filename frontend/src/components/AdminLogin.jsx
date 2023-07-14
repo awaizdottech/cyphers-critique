@@ -19,6 +19,7 @@ function AdminLogin() {
   const PostData = async (e) => {
     try {
       e.preventDefault(); 
+      window.location.href = "http://localhost:3000/admin-page"
       let creds = {
         email: admin,
         password: password

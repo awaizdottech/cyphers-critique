@@ -81,6 +81,7 @@ app.post("/admin-login-submit", (req, res) => {
 });
 
 app.get("/admin-list",(req,res)=>{
+  console.log('called');
   admin
     .find()
     .then((result) => {
@@ -93,6 +94,7 @@ app.get("/admin-list",(req,res)=>{
 
 app.post("/add-admin", (req, res) => {
   //checking if admin already exists
+  console.log('called');
   admin
     .findOne({ email: req.body.email })
     .then((result) => {
@@ -200,6 +202,7 @@ app.get("/lecture-subjects",(req,res)=>res.json(lecturerSubjectAarray))
 
 app.post("/feedback-submit", (req, res) => {
   //[{Subject: "subject", Feedback: []}]
+  console.log(studentDetails);
   req.body.forEach((element) => {
     select[studentDetails.collection]
       .updateOne(

@@ -67,7 +67,7 @@ function DataEntry() {
       <h2>Data Entry by Admin</h2>
       <form>
         <div>
-          <div>
+          <diyv>
             <span>Branch</span>
             <span>
               <select
@@ -160,7 +160,7 @@ function DataEntry() {
                 </div>
               );
             })}
-          </div>
+          </diyv>
         </div>
         <button type="button" id="plus" onClick={addFields}>
           <span className="material-symbols-outlined">add_circle</span>

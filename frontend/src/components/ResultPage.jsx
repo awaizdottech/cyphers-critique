@@ -1,6 +1,7 @@
 import React from 'react'
 
 function ResultPage() {
+
   return (
     <div className='result'>
       <div className="matter">

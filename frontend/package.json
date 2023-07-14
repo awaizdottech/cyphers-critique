@@ -1,4 +1,5 @@
 {
+  "proxy": "http://localhost:4000",
   "name": "studentform",
   "version": "0.1.0",
   "private": true,
@@ -16,7 +17,6 @@
     "react-scripts": "5.0.1",
     "web-vitals": "^2.1.4"
   },
-  "proxy":"http://localhost:3000/",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",

@@ -13,13 +13,20 @@ function AdminPage() {
 
   const fetchAdmins = async () => {
     try {
-      const response = await fetch('/admin-list');
+      const response = await fetch('/admin-list',
+        {
+          method: 'GET',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+        }
+      );
       if (response.ok) {
         const data = await response.json();
         console.log(data);
         setAdmins(data);
       } else {
-        console.log('Failed to fetch admins');
+        console.log(response);
       }
     } catch (error) {
       console.log('Error: ', error);
@@ -55,7 +62,7 @@ function AdminPage() {
 
   const deleteAdmin = async (adminId) => {
     try {
-      const response = await fetch(`/delete-admin/${adminId}`, {
+      const response = await fetch(`http://localhost:4000/delete-admin/${adminId}`, {
         method: 'DELETE',
       });
       if (response.ok) {

@@ -13,20 +13,20 @@ function StLogin() {
           const emailSend = {
             "email": email
           }
-          window.location.href = "http://localhost:3000/form"
-          // axios.get('/even-sem-subjects', emailSend).then((res) => console.log(res)).catch(e => console.log(e))
-          // axios.post('/student-login-submit', emailSend)
-          //   .then(
-          //     (res) => {
-          //       console.log(res);
-          //       if (res.data === 'u r in') {
-          //         window.location.href = "http://localhost:3000/form";
-          //         console.log(res);
-          //       }
-          //       else {
-          //         console.log("Already logged in once")
-          //       }
-          //     }).catch(e => console.log(e))
+          // window.location.href = "http://localhost:3000/form"
+          axios.get('/even-sem-subjects', emailSend).then((res) => console.log(res)).catch(e => console.log(e))
+          axios.post('/student-login-submit', emailSend)
+            .then(
+              (res) => {
+                console.log(res);
+                if (res.data === 'u r in') {
+                  window.location.href = "http://localhost:3000/form";
+                  console.log(res);
+                }
+                else {
+                  console.log("Already logged in once")
+                }
+              }).catch(e => console.log(e))
 
           // axios.get('/even-sem-subjects', emailSend).then((res) => console.log(res)).catch(e => console.log(e))
           // axios.post('/student-login-submit', emailSend).then((res) => console.log(res)).catch(e => console.log(e))

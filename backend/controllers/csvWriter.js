@@ -1,7 +1,7 @@
 import { createObjectCsvWriter } from "csv-writer";
 import lodash from 'lodash'
 
-async function fun( dept, data) {
+async function fun(dept, data) {
   const csvWriter = createObjectCsvWriter({
     path: './Result.csv',
     headerIdDelimiter: ".",
@@ -20,16 +20,19 @@ async function fun( dept, data) {
       { id: "feedback.h", title: "Teacher's Commitment" },
       { id: "feedback.i", title: "Evaluation Procedures" },
       { id: "feedback.j", title: "Overall Rating" },
+      { id: "feedback.k", title: "Remarks" },
     ],
   });
-  let fb, copy;
+  let fb, copy, fbObj;
   let finalJSON = [];
   let obj = { feedback: {} };
 
   data.map((lecturerObj) => {
     lecturerObj.subjects.map((subjectObj) => {
       while (subjectObj.feedback.length != 0) {
-        fb = subjectObj.feedback.pop();
+        fbObj = subjectObj.feedback.pop();
+        console.log(fbObj);
+        fb = Object.values(fbObj)
         obj["lecturer"] = lecturerObj.lecturer;
         obj["subject"] = subjectObj.subject;
         obj["yr"] = subjectObj.yr;
@@ -44,7 +47,7 @@ async function fun( dept, data) {
         obj.feedback["h"] = fb[7];
         obj.feedback["i"] = fb[8];
         obj.feedback["j"] = fb[9];
-        // obj.feedback['k'] =
+        obj.feedback['k'] = fb[10]
         copy = lodash.cloneDeep(obj)
         finalJSON.push(copy);
       }

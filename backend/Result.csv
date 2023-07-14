@@ -1,21 +1,25 @@
-Subject,Year,Section,Lecturer,Subject Knowledge,Preparedness and Presentation,Uniformity of Coverage,Problem Solving,Regularity,Student Participation,Doubt Clearing,Teacher's Commitment,Evaluation Procedures,Overall Rating
-machine learning,3,B,rafi sir,1,2,3,4,5,4,3,2,1,2
-machine learning,3,B,rafi sir,1,2,3,4,5,4,3,2,1,2
-machine learning,3,B,rafi sir,1,2,3,4,5,4,3,2,1,2
-machine learning,3,B,rafi sir,1,2,3,4,5,4,3,2,1,2
-mobile app dev,3,B,rasheed sir,1,2,3,4,5,4,3,2,1,2
-mobile app dev,3,B,rasheed sir,1,2,3,4,5,4,3,2,1,2
-mobile app dev,3,B,rasheed sir,1,2,3,4,5,4,3,2,1,2
-mobile app dev,3,B,rasheed sir,1,2,3,4,5,4,3,2,1,2
-design analysis and algorithms,3,B,ibrahim khaleelullah sir,1,2,3,4,5,4,3,2,1,2
-design analysis and algorithms,3,B,ibrahim khaleelullah sir,1,2,3,4,5,4,3,2,1,2
-design analysis and algorithms,3,B,ibrahim khaleelullah sir,1,2,3,4,5,4,3,2,1,2
-design analysis and algorithms,3,B,ibrahim khaleelullah sir,1,2,3,4,5,4,3,2,1,2
-embedded systems,3,B,hajera mam,1,2,3,4,5,4,3,2,1,2
-embedded systems,3,B,hajera mam,1,2,3,4,5,4,3,2,1,2
-embedded systems,3,B,hajera mam,1,2,3,4,5,4,3,2,1,2
-embedded systems,3,B,hajera mam,1,2,3,4,5,4,3,2,1,2
-network security and cryptography,3,B,gouri mam,1,2,3,4,5,4,3,2,1,2
-network security and cryptography,3,B,gouri mam,1,2,3,4,5,4,3,2,1,2
-network security and cryptography,3,B,gouri mam,1,2,3,4,5,4,3,2,1,2
-network security and cryptography,3,B,gouri mam,1,2,3,4,5,4,3,2,1,2
+Subject,Year,Section,Lecturer,Subject Knowledge,Preparedness and Presentation,Uniformity of Coverage,Problem Solving,Regularity,Student Participation,Doubt Clearing,Teacher's Commitment,Evaluation Procedures,Overall Rating,Remarks
+machine learning,3,B,rafi sir,,,,,,,,,,,qwerty
+machine learning,3,B,rafi sir,1,2,3,4,5,4,3,2,1,2,
+machine learning,3,B,rafi sir,1,2,3,4,5,4,3,2,1,2,
+machine learning,3,B,rafi sir,1,2,3,4,5,4,3,2,1,2,
+machine learning,3,B,rafi sir,1,2,3,4,5,4,3,2,1,2,
+mobile app dev,3,B,rasheed sir,,,,,,,,,,,"qwerty
+
+
+"
+mobile app dev,3,B,rasheed sir,1,2,3,4,5,4,3,2,1,2,
+mobile app dev,3,B,rasheed sir,1,2,3,4,5,4,3,2,1,2,
+mobile app dev,3,B,rasheed sir,1,2,3,4,5,4,3,2,1,2,
+mobile app dev,3,B,rasheed sir,1,2,3,4,5,4,3,2,1,2,
+design analysis and algorithms,3,B,ibrahim khaleelullah sir,,,,,,,,,,,qwerty
+design analysis and algorithms,3,B,ibrahim khaleelullah sir,1,2,3,4,5,4,3,2,1,2,
+design analysis and algorithms,3,B,ibrahim khaleelullah sir,1,2,3,4,5,4,3,2,1,2,
+design analysis and algorithms,3,B,ibrahim khaleelullah sir,1,2,3,4,5,4,3,2,1,2,
+design analysis and algorithms,3,B,ibrahim khaleelullah sir,1,2,3,4,5,4,3,2,1,2,
+network security and cryptography,3,B,gouri mam,,,,,,,,,,,qwerty
+embedded systems,3,B,hajera mam,,,,,,,,,,,qwerty
+embedded systems,3,B,hajera mam,1,2,3,4,5,4,3,2,1,2,
+embedded systems,3,B,hajera mam,1,2,3,4,5,4,3,2,1,2,
+embedded systems,3,B,hajera mam,1,2,3,4,5,4,3,2,1,2,
+embedded systems,3,B,hajera mam,1,2,3,4,5,4,3,2,1,2,
