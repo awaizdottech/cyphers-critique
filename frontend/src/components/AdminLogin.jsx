@@ -12,7 +12,6 @@ function AdminLogin() {
   const PostData = async (e) => {
     try {
       e.preventDefault(); 
-      window.location.href = "http://localhost:3000/admin-page"
       let creds = {
         email: admin,
         password: password
@@ -29,7 +28,7 @@ function AdminLogin() {
       console.log(data);
       if (data) {
         window.alert("connected to backend");
-        window.location.href = "http://localhost:3000/admin-page";
+        // window.location.href = "http://localhost:3000/admin-page";
       }
     } catch (error) {
       console.log(error);

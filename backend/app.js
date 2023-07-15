@@ -86,6 +86,7 @@ app.get("/admin-list",(req,res)=>{
     .find()
     .then((result) => {
       res.json(result)
+      console.log(result);
     })
     .catch((err) => {
       res.json(err.message);
@@ -120,6 +121,7 @@ app.post("/add-admin", (req, res) => {
 });
 
 app.delete("/delete-admin", (req, res) => {
+  
   admin
     .deleteOne({ email: req.body.email })
     .then((result) => res.json(result))

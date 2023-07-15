@@ -60,10 +60,14 @@ function AdminPage() {
     }
   };
 
-  const deleteAdmin = async (adminId) => {
+  const deleteAdmin = async (adminId, adminEmail) => {
     try {
-      const response = await fetch(`http://localhost:4000/delete-admin/${adminId}`, {
+      const response = await fetch("/delete-admin", {
         method: 'DELETE',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({email: adminEmail})
       });
       if (response.ok) {
         setAdmins(admins.filter((admin) => admin._id !== adminId));
@@ -81,11 +85,11 @@ function AdminPage() {
       {admins.map((admin) => (
         <div className="admins">
           <p key={admin._id}>{admin.email}</p>
-          <button onClick={deleteAdmin(admin._id)}>Delete</button>
+          <button onClick={()=>deleteAdmin(admin._id, admin.email)}>Delete</button>
         </div>
       ))}
 
-      <div className="adminAdd">
+      <form className="adminAdd">
         <input
           type="text"
           value={adminEmail}
@@ -102,7 +106,7 @@ function AdminPage() {
         {adminExists && <p>Admin already exists.</p>}
         {adminAdded && <p>Admin added successfully.</p>}
         {/* <button onClick={deleteAdmin}>Delete Admin</button> */}
-      </div>
+      </form>
 
       <button>Wipe data</button>
     </div>
