@@ -7,7 +7,7 @@ function ResultPage() {
       <div className="matter">
         <h2>
           Thanks for submitting the form <br />
-          Have a good day
+          Have a good day ;)
         </h2>
       </div>
     </div>

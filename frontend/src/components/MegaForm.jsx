@@ -34,7 +34,6 @@ function MegaForm() {
 
   const sendform = async(e) => {
     e.preventDefault();
-    console.log({student})
     // window.location.href = "http://localhost:3000/result";
     localStorage.clear();
     // axios
@@ -64,10 +63,10 @@ function MegaForm() {
         });
         const result = await response.json();
         console.log(result);
+        window.location.href = "http://localhost:3000/result";
       } catch (error) {
         console.log('Error: ', error);
       }
-    console.log("nhi mlm hora");
   };
 
 

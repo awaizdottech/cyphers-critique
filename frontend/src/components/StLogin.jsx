@@ -24,7 +24,7 @@ function StLogin() {
                   console.log(res);
                 }
                 else {
-                  console.log("Already logged in once")
+                  alert("Already logged in once")
                 }
               }).catch(e => console.log(e))
 
