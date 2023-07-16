@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { AiTwotoneDelete } from 'react-icons/ai'
 
 function AdminPage() {
   const [adminEmail, setAdminEmail] = useState('');
@@ -33,7 +34,8 @@ function AdminPage() {
     }
   };
 
-  const addAdmin = async () => {
+  const addAdmin = async (e) => {
+    e.preventDefault()
     try {
       const response = await fetch('/add-admin', {
         method: 'POST',
@@ -67,7 +69,7 @@ function AdminPage() {
         headers: {
           'Content-Type': 'application/json'
         },
-        body: JSON.stringify({email: adminEmail})
+        body: JSON.stringify({ email: adminEmail })
       });
       if (response.ok) {
         setAdmins(admins.filter((admin) => admin._id !== adminId));
@@ -81,15 +83,18 @@ function AdminPage() {
 
   return (
     <div className="adminPage">
-      <h3>Admin List</h3>
-      {admins.map((admin) => (
-        <div className="admins">
-          <p key={admin._id}>{admin.email}</p>
-          <button onClick={()=>deleteAdmin(admin._id, admin.email)}>Delete</button>
-        </div>
-      ))}
-
+      <div className="list">
+        <h1>Admins List</h1>
+        {admins.map((admin) => (
+          <div className="admins">
+            <p key={admin._id}>{admin.email}</p>
+            <button onClick={() => deleteAdmin(admin._id, admin.email)}><AiTwotoneDelete/></button>
+          </div>
+        ))}
+        <button className='wipe'>Wipe data</button>
+      </div>
       <form className="adminAdd">
+        <h1>Add new admin</h1>
         <input
           type="text"
           value={adminEmail}
@@ -108,7 +113,7 @@ function AdminPage() {
         {/* <button onClick={deleteAdmin}>Delete Admin</button> */}
       </form>
 
-      <button>Wipe data</button>
+
     </div>
   );
 }

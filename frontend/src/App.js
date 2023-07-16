@@ -1,4 +1,5 @@
 import './App.css';
+import './ResponsiveApp.css';
 import { Routes, Route, BrowserRouter, Form } from 'react-router-dom';
 import StudentForm from './components/StudentForm';
 import AdminLogin from './components/AdminLogin';

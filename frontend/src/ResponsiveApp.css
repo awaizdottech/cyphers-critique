@@ -1,0 +1,57 @@
+@media (max-width: 600px) and (min-width: 270px) {
+  div.StuForm {
+    margin: 0;
+    width: 100%;
+    padding: 10px;
+  }
+
+  div.Header {
+    display: flex;
+    flex-direction: column;
+  }
+
+  div.Header h1 {
+    font-size: 1rem;
+    width: 100%;
+  }
+
+  div.head h1 {
+    font-size: 1.2rem;
+    margin: 0;
+  }
+
+  div.head h2 {
+    font-size: 1.2rem;
+    margin: 0;
+  }
+
+  div.StuForm ol li {
+    padding: 0;
+  }
+
+  div.opts {
+    display: flex;
+    flex-direction: column;
+  }
+
+  div.Admin form.AdminLogin {
+    width: 90%;
+  }
+  div.adminPage{
+    padding: 0;
+  }
+  div.adminPage div.list{
+    width: 100%;
+    padding: 10px;
+    border: none;
+  }
+  div.list div.admins{
+    width: 100%;
+    padding: 10px 0;
+    justify-content: space-between;
+  }
+  div.adminPage form.adminAdd{
+    width: 95%;
+  
+  }
+}

@@ -1,27 +1,60 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-.StuForm{
+
+div.StuForm {
     width: 80%;
-    background-color: #90EE90;
-    margin: 1% auto;
-    padding: 60px;
+    background-color: #f2f4f6;
+    margin: 2% auto;
+    padding: 40px;
 }
-div.head{
+
+div.Header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px 10px;
+}
+
+div.Header h1 {
+    color: #00214d;
+    text-align: center;
+}
+
+div.StuForm ol {
+    color: #00214d;
+}
+
+div.StuForm ol li {
+    padding: 10px;
+    background-color: #fffffe;
+}
+
+div.head {
     text-align: left;
 }
 
-.Header{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    align-items: center;
-    
+div.head h1 {
+    color: #00214d;
+    text-align: center;
+    margin: 10px;
 }
 
-div.login{
+div.head h2 {
+    color: #00214d;
+    text-align: center;
+    margin: 10px;
+}
+
+div.head p {
+    font-size: 1.3rem;
+    margin: 10px;
+}
+
+div.login {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -29,49 +62,89 @@ div.login{
     height: 100vh;
 }
 
-div.Header img{
+div.Header img {
     border-radius: 50%;
 }
-div.Header h1{
-    text-align: center;
-    /* width: 20%; */
-}
-.logo{
+
+.logo {
     height: 12rem;
     width: 10rem;
 }
-ol.ques{
+
+ol.ques {
     margin: 1% auto;
     /* padding: 1% auto; */
     width: 90%;
     /* text-align: center; */
 }
-ol.ques li{
+
+ol.ques li {
     margin: 1%;
     padding: 1%;
 }
-div.opts{
-    
+
+div.opts {
+
     color: black;
 }
-div.opts > *{
+
+div.opts>* {
     margin: 0.5%;
     padding: 0.5%;
 }
 
-.AdminLogin{
-    height: 100%;
-    background-color: lightgreen;
+div.Admin {
+    height: 100vh;
     display: flex;
-    flex-direction: column;
-    width: 50%;
-    padding: 2%;
-    margin: 2%;
-    border-radius: 2%;
-    justify-items: center;
+    justify-content: center;
     align-items: center;
 }
-.DataEntry{
+
+div.Admin form.AdminLogin {
+    background-color: #f2f4f6;
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    padding: 20px;
+    border-radius: 10px;
+    justify-content: space-around;
+
+}
+
+form.AdminLogin h2 {
+    color: #00214d;
+    font-size: 2rem;
+}
+
+form.AdminLogin label {
+    color: #00214d;
+    width: 50%;
+    font-size: 1.2rem;
+    margin: 10px 0;
+    /* padding: 10px; */
+}
+
+form.AdminLogin input {
+    color: #00214d;
+    width: 80%;
+    padding: 10px;
+    font-size: 1rem;
+    border-radius: 10px;
+}
+
+form.AdminLogin button {
+    background-color: #00ebc7;
+    border: none;
+    color: #00214d;
+    padding: 0.8rem 1rem;
+    font-size: 1rem;
+    width: 40%;
+    margin: 20px 0;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+.DataEntry {
     display: flex;
     flex-direction: column;
     width: 50%;
@@ -85,107 +158,185 @@ div.opts > *{
 }
 
 
-.DataEntry{
+.DataEntry {
     display: flex;
     flex-direction: column;
     padding: 1%;
 
 }
-.Lecturer{
+
+.Lecturer {
     background-color: azure;
     margin: 2%;
     padding: 1%;
 }
 
-.repeat{
+.repeat {
     background-color: aliceblue;
     margin: 1%;
     padding: 1%;
     border: 2px lightgreen solid;
 }
-textarea{
+
+textarea {
     width: 100%;
 }
 
-div.adminPage{
-    background-color: #90EE90;
+div.adminPage {
+    background-color: #fffffe;
     display: flex;
     flex-direction: column;
-    width: 50%;
-    justify-content: center;
+    width: 100%;
+    justify-content: space-around;
     align-items: center;
-    /* height: 0vh; */
     margin: 2px auto;
     padding: 10px;
 }
-div.adminAdd{
+
+div.adminPage div.list {
+    background-color: aliceblue;
+    margin: 10px 0;
+    padding: 20px;
+    width: 40%;
+    border-radius: 10px;
+    text-align: center;
+
+}
+
+div.list div.admins {
+    
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+}
+div.list h1{
+    text-align: center;
+    margin: 10px 0;
+}
+div.admins p{
+    background-color: #fffffe;
+    width: 90%;
+    text-align: start;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+div.admins button {
+    padding: 10px 15px;
+    background-color: #00ebc7;
+    border: none;
+    padding: 1rem;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    margin: 0 10px;
+    
+}
+
+div.adminPage form.adminAdd {
     display: flex;
     flex-direction: column;
     background-color: aliceblue;
-    margin: 20px;
+    margin: 10px 0;
     padding: 20px;
-    width: 50%;
-    border-radius: 7px;
-}
-div.adminAdd button{
-    width: 50%;
-    margin: 5px;
-    padding: 6px;
-    border-radius: 10px;
-
-}
-
-div.adminAdd input{
-    padding: 10px;
-    margin: 5px;
+    width: 40%;
     border-radius: 10px;
 }
 
-div.adminPage div.admins{
-    border-bottom: 2px solid black;
-    display: flex;
-    justify-content: space-around;
-    width: 100%;
+form.adminAdd h1 {
+    margin: 10px 0;
+    text-align: center;
+}
+
+
+form.adminAdd input {
     padding: 10px;
+    border-radius: 10px;
+    color: #00214d;
+    width: 90%;
+    font-size: 1rem;
+    margin: 10px 0;
 }
 
-div.admins button{
-    padding: 5px 15px;
+form.adminAdd button {
+    margin: 10px 0;
+    padding: 0.8rem;
+    font-size: 1rem;
+    width: 50%;
+    border-radius: 10px;
+    background-color: #00ebc7;
+    border: none;
+    cursor: pointer;
 }
 
-
-div.Login{
+div.list button.wipe {
+    margin: 10px auto;
+    padding: 1rem 2rem;
+    font-size: 1rem;
+    /* width: 50%; */
+    border-radius: 10px;
+    background-color: #00ebc7;
+    border: none;
+    cursor: pointer;
     
+}
+
+
+
+
+div.Login {
+
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     height: 100vh;
 }
-div.Login div.content{
+
+div.Login div.content {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    background-color: #90EE90;
+    justify-content: space-between;
+
     padding: 20px;
-    height: 50vh;
-    width: 50vw;
-}
-div.content label{
-    padding: 10px 15px;
-    margin: 10px;
-    font-size: 25px;
+    /* height: 50vh; */
+
 }
 
-div.content input{
+div.content h1 {
+    font-size: 3rem;
+}
+
+div.content h3 {
+    font-size: 1.5rem;
+}
+
+div.content form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+div.content label {
+    /* padding: 10px 15px; */
+    color: #1b2d45;
+    font-size: 1.5rem;
+}
+
+div.content input {
     padding: 10px 15px;
-    margin: 10px;
+    /* margin: 10px; */
     font-size: 18px;
 }
 
-div.content button{
-    padding: 10px 15px;
-    margin: 10px;
+div.content button {
+    padding: 1.2rem 2rem;
+    font-size: 1.2rem;
+    width: 30%;
+    background-color: #00ebc7;
+    color: #00214d;
+    border: none;
 }
 
 div.MegaForm form {
@@ -193,14 +344,25 @@ div.MegaForm form {
     flex-direction: column;
     justify-content: space-around;
 }
-div.MegaForm form div.btns{
+
+div.MegaForm form div.btns {
     display: flex;
     flex-direction: row-reverse;
     width: 100%;
     justify-content: center;
     padding: 20px;
 }
-div.MegaForm button{
+
+div.btns button {
+    background-color: #00ebc7;
+    color: #00214d;
+    border: none;
+    padding: 1.2rem 2rem;
+    font-size: 1.2rem;
+    /* width: 10%; */
+}
+
+div.MegaForm button {
     padding: 10px 15px;
     margin: 10px;
 }
@@ -211,10 +373,10 @@ div.result {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    
+
 }
 
-div.result div.matter{
+div.result div.matter {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -222,9 +384,8 @@ div.result div.matter{
     background-color: #90EE90;
     padding: 20px;
     width: 50%;
-    height: 50%; 
+    height: 50%;
     font-size: 1.5rem;
-  
+
     text-align: center;
 }
-

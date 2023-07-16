@@ -6,14 +6,14 @@ function StLogin() {
   return (
     <div className='Login'>
       <div className="content">
-        <h1>Student Feedback form</h1>
+        <h1>CYPHER'S CRITIQUE</h1>
+        <h3>Student Feedback form</h3>
         <form action="" onSubmit={(e) => {
           console.log(email);
           e.preventDefault();
           const emailSend = {
             "email": email
           }
-          // window.location.href = "http://localhost:3000/form"
           axios.get('/even-sem-subjects', emailSend).then((res) => console.log(res)).catch(e => console.log(e))
           axios.post('/student-login-submit', emailSend)
             .then(

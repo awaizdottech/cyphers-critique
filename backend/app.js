@@ -73,7 +73,7 @@ app.post("/admin-login-submit", (req, res) => {
           element.password == req.body.password
         ) found=true;
       });
-      found?res.json('sucessful'):res.json("unsuccessful");
+      found?res.json('successful'):res.json("unsuccessful");
     })
     .catch((err) => {
       res.json(err.message);

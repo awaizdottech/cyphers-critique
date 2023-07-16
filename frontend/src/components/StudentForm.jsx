@@ -102,14 +102,12 @@ function StudentForm(props) {
 
   return (
     <div className='StuForm'>
-
-      
         <Header />
         <div className="head">
-          <h2 ref={refer}>Teacher Evaluation / Feed-Back Form</h2>
-          <h2>Subject : {props.subject}</h2>
-          <h2>Teacher : {props.teacher}</h2>
-          
+          <h1 ref={refer} >Teacher Evaluation / Feed-Back Form</h1>
+          <p><b>Subject : </b>{props.subject}</p>
+          <p><b>Teacher : </b>{props.teacher}</p>
+          <hr />
           <h2>Please select the relevant option</h2>
         </div>
         <ol className='ques'>
