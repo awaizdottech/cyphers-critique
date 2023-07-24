@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import StudentForm from "./StudentForm";
 import { StudentContextC } from "../contexts/StudentContext";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 function MegaForm() {
   const { student, setStudent } = StudentContextC();
