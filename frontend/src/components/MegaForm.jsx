@@ -63,7 +63,7 @@ function MegaForm() {
         });
         const result = await response.json();
         console.log(result);
-        window.location.href = "https://cyphers-critique.onrender.com/result";
+        nav("/result")
       } catch (error) {
         console.log('Error: ', error);
       }

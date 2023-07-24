@@ -56,7 +56,7 @@ function DataEntry() {
       const data = await res.json();
       console.log(data);
       if (data) window.alert("connected to backend");
-      window.location.href = "https://cyphers-critique.onrender.com/form";
+      nav("/form")
     } catch (error) {
       console.log(error);
     }

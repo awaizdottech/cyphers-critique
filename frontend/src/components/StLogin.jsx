@@ -3,6 +3,8 @@ import axios from 'axios'
 
 function StLogin() {
   const [email, setEmail] = useState("");
+  const nav = useNavigate();
+
   return (
     <div className='Login'>
       <div className="content">
@@ -20,7 +22,7 @@ function StLogin() {
               (res) => {
                 console.log(res);
                 if (res.data === 'u r in') {
-                  window.location.href = "https://cyphers-critique.onrender.com/form";
+                  nav("/form")
                   console.log(res);
                 }
                 else {
