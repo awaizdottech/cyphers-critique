@@ -18,6 +18,7 @@ import prodLecturers from "./models/prodLecturers.js";
 import path from "path";
 import morgan from "morgan";
 import { log } from "console";
+import cors from 'cors'
 
 //initialising server using express
 const app = express();
