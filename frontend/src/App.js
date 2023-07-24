@@ -19,13 +19,13 @@ function App() {
       <div className="App">
         <BrowserRouter>
           <Routes>
-            <Route path="https://cyphers-critique.onrender.com/" element={<StLogin />} />
-            <Route path="https://cyphers-critique.onrender.com/admin-login" element={<AdminLogin />} />
-            <Route path="https://cyphers-critique.onrender.com/admin-page" element={<AdminPage />} />
-            <Route path="https://cyphers-critique.onrender.com/form" element={<MegaForm />} />
+            <Route path="/" element={<StLogin />} />
+            <Route path="/admin-login" element={<AdminLogin />} />
+            <Route path="/admin-page" element={<AdminPage />} />
+            <Route path="/form" element={<MegaForm />} />
 
-            <Route path="https://cyphers-critique.onrender.com/data-entry" element={<DataEntry />} />
-            <Route path="https://cyphers-critique.onrender.com/result" element={<ResultPage />} />
+            <Route path="/data-entry" element={<DataEntry />} />
+            <Route path="/result" element={<ResultPage />} />
           </Routes>
         </BrowserRouter>
       </div>
