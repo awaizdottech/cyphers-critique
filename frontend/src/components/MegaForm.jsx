@@ -6,6 +6,7 @@ import { useNavigate } from "react-router-dom";
 
 function MegaForm() {
   const { student, setStudent } = StudentContextC();
+  const nav = useNavigate();
 
   const [index, setIndex] = useState(
     Number(localStorage.getItem("index")) || 0
