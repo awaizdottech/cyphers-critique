@@ -26,6 +26,9 @@ app.use(express.static("public"));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(morgan("dev"));
+app.use(cors({
+  origin:['https://cyphers-critique.onrender.com']
+}))
 
 //connecting to database
 const dburi =
