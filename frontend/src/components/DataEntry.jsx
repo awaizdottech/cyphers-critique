@@ -46,7 +46,7 @@ function DataEntry() {
           subjects: [details],
         }
       };
-      const res = await fetch("/data-entry-submit", {
+      const res = await fetch("https://cypher-backend.onrender.com/data-entry-submit", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -56,7 +56,7 @@ function DataEntry() {
       const data = await res.json();
       console.log(data);
       if (data) window.alert("connected to backend");
-      window.location.href = "http://localhost:3000/form";
+      window.location.href = "https://cyphers-critique.onrender.com/form";
     } catch (error) {
       console.log(error);
     }

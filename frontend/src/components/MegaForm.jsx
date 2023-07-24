@@ -54,7 +54,7 @@ function MegaForm() {
           sendData.push(obj)
 
         });
-        const response = await fetch('/feedback-submit', {
+        const response = await fetch('https://cypher-backend.onrender.com/feedback-submit', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
@@ -63,7 +63,7 @@ function MegaForm() {
         });
         const result = await response.json();
         console.log(result);
-        window.location.href = "http://localhost:3000/result";
+        window.location.href = "https://cyphers-critique.onrender.com/result";
       } catch (error) {
         console.log('Error: ', error);
       }
@@ -72,7 +72,7 @@ function MegaForm() {
 
   const fetchLectureSubjects = async () => {
     try {
-      const response = await fetch('/lecture-subjects', {
+      const response = await fetch('https://cypher-backend.onrender.com/lecture-subjects', {
         method: 'GET',
         headers: {
           'Content-Type': 'application/json',

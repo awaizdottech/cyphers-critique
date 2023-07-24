@@ -20,7 +20,7 @@ function AdminLogin() {
             password: password
           }
           console.log(creds)
-          axios.post('/admin-login-submit', creds)
+          axios.post('https://cypher-backend.onrender.com/admin-login-submit', creds)
             .then(
               (res) => {
                 if (res.data === 'successful') {

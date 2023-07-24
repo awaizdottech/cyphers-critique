@@ -14,13 +14,13 @@ function StLogin() {
           const emailSend = {
             "email": email
           }
-          axios.get('/even-sem-subjects', emailSend).then((res) => console.log(res)).catch(e => console.log(e))
-          axios.post('/student-login-submit', emailSend)
+          axios.get('https://cypher-backend.onrender.com/even-sem-subjects', emailSend).then((res) => console.log(res)).catch(e => console.log(e))
+          axios.post('https://cypher-backend.onrender.com/student-login-submit', emailSend)
             .then(
               (res) => {
                 console.log(res);
                 if (res.data === 'u r in') {
-                  window.location.href = "http://localhost:3000/form";
+                  window.location.href = "https://cyphers-critique.onrender.com/form";
                   console.log(res);
                 }
                 else {

@@ -14,7 +14,7 @@ function AdminPage() {
 
   const fetchAdmins = async () => {
     try {
-      const response = await fetch('/admin-list',
+      const response = await fetch('https://cypher-backend.onrender.com/admin-list',
         {
           method: 'GET',
           headers: {
@@ -37,7 +37,7 @@ function AdminPage() {
   const addAdmin = async (e) => {
     e.preventDefault()
     try {
-      const response = await fetch('/add-admin', {
+      const response = await fetch('https://cypher-backend.onrender.com/add-admin', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -64,7 +64,7 @@ function AdminPage() {
 
   const deleteAdmin = async (adminId, adminEmail) => {
     try {
-      const response = await fetch("/delete-admin", {
+      const response = await fetch("https://cypher-backend.onrender.com/delete-admin", {
         method: 'DELETE',
         headers: {
           'Content-Type': 'application/json'
