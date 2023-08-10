@@ -41,22 +41,25 @@ function DataEntry() {
       e.preventDefault();
       let sendDetails = {
         branch: branch,
-        obj:{
+        obj: {
           lecturer: lecturer,
           subjects: [details],
-        }
-      };
-      const res = await fetch("https://cypher-backend.onrender.com/data-entry-submit", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
         },
-        body: JSON.stringify(sendDetails),
-      });
+      };
+      const res = await fetch(
+        "https://cypher-backend.onrender.com/data-entry-submit",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(sendDetails),
+        }
+      );
       const data = await res.json();
       console.log(data);
       if (data) window.alert("connected to backend");
-      nav("/form")
+      nav("/form");
     } catch (error) {
       console.log(error);
     }
@@ -67,7 +70,7 @@ function DataEntry() {
       <h2>Data Entry by Admin</h2>
       <form>
         <div>
-          <diyv>
+          <div>
             <span>Branch</span>
             <span>
               <select
@@ -160,15 +163,19 @@ function DataEntry() {
                 </div>
               );
             })}
-          </diyv>
+          </div>
         </div>
+
         <button type="button" id="plus" onClick={addFields}>
           <span className="material-symbols-outlined">add_circle</span>
         </button>
         <br />
-        <button type="submit" onClick={PostData}>submit</button>
-        <br />
-        <button onClick={goBack}>Go Back</button>
+        <div className="dataBtns">
+          <button type="submit" onClick={PostData}>
+            Submit
+          </button>
+          <button onClick={goBack}>Go Back</button>
+        </div>
       </form>
     </div>
   );

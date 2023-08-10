@@ -1,12 +1,15 @@
-import React, { useEffect, useState } from 'react';
-import { AiTwotoneDelete } from 'react-icons/ai'
+import React, { useEffect, useState } from "react";
+import { AiTwotoneDelete } from "react-icons/ai";
+import { useNavigate } from "react-router-dom";
 
 function AdminPage() {
-  const [adminEmail, setAdminEmail] = useState('');
-  const [adminPassword, setAdminPassword] = useState('');
+  const [adminEmail, setAdminEmail] = useState("");
+  const [adminPassword, setAdminPassword] = useState("");
   const [adminExists, setAdminExists] = useState(false);
   const [adminAdded, setAdminAdded] = useState(false);
   const [admins, setAdmins] = useState([]);
+
+  const nav = useNavigate();
 
   useEffect(() => {
     fetchAdmins();
@@ -14,11 +17,12 @@ function AdminPage() {
 
   const fetchAdmins = async () => {
     try {
-      const response = await fetch('https://cypher-backend.onrender.com/admin-list',
+      const response = await fetch(
+        "https://cypher-backend.onrender.com/admin-list",
         {
-          method: 'GET',
+          method: "GET",
           headers: {
-            'Content-Type': 'application/json',
+            "Content-Type": "application/json",
           },
         }
       );
@@ -30,54 +34,60 @@ function AdminPage() {
         console.log(response);
       }
     } catch (error) {
-      console.log('Error: ', error);
+      console.log("Error: ", error);
     }
   };
 
   const addAdmin = async (e) => {
-    e.preventDefault()
+    e.preventDefault();
     try {
-      const response = await fetch('https://cypher-backend.onrender.com/add-admin', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ email: adminEmail, password: adminPassword }),
-      });
+      const response = await fetch(
+        "https://cypher-backend.onrender.com/add-admin",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ email: adminEmail, password: adminPassword }),
+        }
+      );
       if (response.ok) {
         const result = await response.json();
-        if (result === 'already exists') {
+        if (result === "already exists") {
           setAdminExists(true);
           setAdminAdded(false);
         } else {
           setAdminExists(false);
           setAdminAdded(true);
         }
-        console.log('result: ', result);
+        console.log("result: ", result);
       } else {
-        console.log('Failed to add Admin');
+        console.log("Failed to add Admin");
       }
     } catch (error) {
-      console.log('Error: ', error);
+      console.log("Error: ", error);
     }
   };
 
   const deleteAdmin = async (adminId, adminEmail) => {
     try {
-      const response = await fetch("https://cypher-backend.onrender.com/delete-admin", {
-        method: 'DELETE',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({ email: adminEmail })
-      });
+      const response = await fetch(
+        "https://cypher-backend.onrender.com/delete-admin",
+        {
+          method: "DELETE",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ email: adminEmail }),
+        }
+      );
       if (response.ok) {
         setAdmins(admins.filter((admin) => admin._id !== adminId));
       } else {
-        console.log('Failed to delete admin');
+        console.log("Failed to delete admin");
       }
     } catch (error) {
-      console.log('Error:', error);
+      console.log("Error:", error);
     }
   };
 
@@ -88,10 +98,12 @@ function AdminPage() {
         {admins.map((admin) => (
           <div className="admins">
             <p key={admin._id}>{admin.email}</p>
-            <button onClick={() => deleteAdmin(admin._id, admin.email)}><AiTwotoneDelete/></button>
+            <button onClick={() => deleteAdmin(admin._id, admin.email)}>
+              <AiTwotoneDelete />
+            </button>
           </div>
         ))}
-        <button className='wipe'>Wipe data</button>
+        <button className="wipe">Wipe data</button>
       </div>
       <form className="adminAdd">
         <h1>Add new admin</h1>
@@ -107,13 +119,14 @@ function AdminPage() {
           onChange={(e) => setAdminPassword(e.target.value)}
           placeholder="Enter Admin Password"
         />
-        <button onClick={addAdmin}>Add Admin</button>
+        <div className="adminBtns">
+          <button onClick={addAdmin}>Add Admin</button>
+          <button onClick={() => nav("/data-entry")}>Data Entry</button>
+        </div>
         {adminExists && <p>Admin already exists.</p>}
         {adminAdded && <p>Admin added successfully.</p>}
         {/* <button onClick={deleteAdmin}>Delete Admin</button> */}
       </form>
-
-
     </div>
   );
 }

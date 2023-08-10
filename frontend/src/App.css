@@ -148,23 +148,19 @@ form.AdminLogin button {
     display: flex;
     flex-direction: column;
     width: 50%;
-
+    font-size: 1.5rem;
     justify-content: center;
     align-items: center;
-    background-color: lightgreen;
+    background-color: #f2f4f6;
     padding: 2%;
     margin: 2% auto;
 
 }
-
-
-.DataEntry {
-    display: flex;
-    flex-direction: column;
-    padding: 1%;
-
+div.DataEntry h2{
+    color: #00214d;
+    font-size: 2.5rem;
+    
 }
-
 .Lecturer {
     background-color: azure;
     margin: 2%;
@@ -174,10 +170,23 @@ form.AdminLogin button {
 .repeat {
     background-color: aliceblue;
     margin: 1%;
-    padding: 1%;
-    border: 2px lightgreen solid;
+    padding: 2%;
+    background-color: #fffffe;
 }
-
+div.dataBtns{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+div.dataBtns button{
+    margin: 2%;
+    background-color: #00ebc7;
+    padding: 0.8rem;
+    font-size: 1.2rem;
+    width: 70%;
+    color: #00214d;
+    border: none;
+}
 textarea {
     width: 100%;
 }
@@ -258,11 +267,28 @@ form.adminAdd input {
     margin: 10px 0;
 }
 
+div.adminBtns {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+div.adminBtns button {
+    margin: 10px 0;
+    padding: 0.8rem;
+    font-size: 1rem;
+    width: 30%;
+    border-radius: 10px;
+    background-color: #00ebc7;
+    border: none;
+    cursor: pointer;
+}
+
 form.adminAdd button {
     margin: 10px 0;
     padding: 0.8rem;
     font-size: 1rem;
-    width: 50%;
+    width: 30%;
     border-radius: 10px;
     background-color: #00ebc7;
     border: none;
@@ -280,8 +306,6 @@ div.list button.wipe {
     cursor: pointer;
     
 }
-
-
 
 
 div.Login {
@@ -330,15 +354,25 @@ div.content input {
     font-size: 18px;
 }
 
-div.content button {
-    padding: 1.2rem 2rem;
-    font-size: 1.2rem;
-    width: 30%;
-    background-color: #00ebc7;
-    color: #00214d;
-    border: none;
+div.content div.btns{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 }
 
+div.content div.btns button {
+    padding: 1.2rem 2rem;
+    margin: 1%;
+    font-size: 1.2rem;
+    width: 40%;
+    background-color: #00ebc7;
+    color: #00214d;
+    border-radius: 15px;
+    cursor: pointer;
+}
+div.btns button.btn{
+    width: 50%;
+}
 div.MegaForm form {
     display: flex;
     flex-direction: column;
