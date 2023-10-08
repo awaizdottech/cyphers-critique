@@ -1,10 +1,8 @@
 import express from "express";
-//import mongoose, { Collection } from 'mongoose'
 import mongoose from "mongoose";
 import admin from "./models/admin.js";
 import student from "./models/student.js";
 import stuDetails from "./controllers/rollno.js";
-// import resultGenerator from "./controllers/resultGenerator.js";
 import csvWriter from "./controllers/csvWriter.js";
 import itLecturers from "./models/itLecturers.js";
 import aidsLecturers from "./models/aidsLecturers.js";
@@ -17,13 +15,11 @@ import mechLecturers from "./models/mechLecturers.js";
 import prodLecturers from "./models/prodLecturers.js";
 import path from "path";
 import morgan from "morgan";
-import { log } from "console";
 import cors from 'cors'
 
 //initialising server using express
 const app = express();
 app.listen(4000);
-app.use(express.static("public"));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(morgan("dev"));
@@ -50,20 +46,6 @@ let select = {
   mechLecturers,
   prodLecturers,
 };
-
-// requesting forms
-app.get("/data-entry-form", (req, res) => {
-  res.render("data-entry-form");
-});
-app.get("/student-login-form", (req, res) => {
-  res.render("student-login-form");
-});
-app.get("/admin-login-form", (req, res) => {
-  res.render("admin-login-form");
-});
-app.get("/feedback-form", (req, res) => {
-  res.render("feedback-form");
-});
 
 // sending form submits
 app.post("/admin-login-submit", (req, res) => {
